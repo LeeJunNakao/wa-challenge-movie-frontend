@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Desafio - W.A.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este projeto consiste um site para visualização de um catálogo de filmes alimentado por uma API criado também pelo autor do projeto.
 
-## Available Scripts
+## Orientações
 
-In the project directory, you can run:
+Para rodar o projeto, siga os seguintes passos:
 
-### `npm start`
+### Docker
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Monte a imagem:  
+  
+```
+  docker build -t <NOME_DA_IMAGEM> .
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Inicie o container:
+  
+```
+docker run -d -p 3000:3000 --name <NOME_DO_CONTAINER> <NOME_DA_IMAGEM>
+```
 
-### `npm test`
+- Acesse pelo endereço: http://localhost:3000
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Linha de comando
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Instale as dependências do projeto: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+  yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Rode o servidor:
 
-### `npm run eject`
+```
+  yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Projetos hospedados
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Origem dos dados ](http://ghibli-api.softdevelopments.com.br/)
+- [Backend ](http://wa-movie-api.softdevelopments.com.br/)
+- [Frontend](http://wa-movie.softdevelopments.com.br/)

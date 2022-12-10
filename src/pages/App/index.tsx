@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
+import Button from "@mui/material/Button";
 import Card from "src/components/Card";
 import Pagination from "src/components/Pagination";
-import Button from "@mui/material/Button";
+import Snackbar from "src/components/Snackbar";
 import { useMovies } from "./hooks";
 
 import * as S from "./styles";
@@ -17,6 +18,8 @@ function App() {
     lastPage,
     loading,
     refresh,
+    showError,
+    setError,
   } = useMovies();
 
   useEffect(() => {
@@ -70,6 +73,12 @@ function App() {
           totalPage={lastPage}
         />
       </S.PaginationWrapper>
+      <Snackbar
+        show={showError}
+        handleClose={() => setError(false)}
+        severity="error"
+        message="Falha ao carregar os filmes"
+      />
     </S.Page>
   );
 }

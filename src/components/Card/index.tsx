@@ -18,7 +18,7 @@ type Props = {
 
 export default function MovieCard(props: Props) {
   return (
-    <Card sx={{ maxWidth: 345, height: 600 }}>
+    <Card sx={{ maxWidth: 345, height: 600 }} data-testid="movie-card">
       <CardHeader
         title={props.title}
         subheader={`Score: ${props.score} / 100`}

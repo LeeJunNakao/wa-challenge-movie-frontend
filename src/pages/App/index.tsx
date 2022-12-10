@@ -54,11 +54,13 @@ function App() {
       </S.PaginationWrapper>
 
       {loading ? (
-        <CircularProgress color="inherit" />
+        <CircularProgress data-testid="loading-icon" color="inherit" />
       ) : currentPageMovies.length ? (
         <S.MoviesDisplay>{MoviesCards}</S.MoviesDisplay>
       ) : (
-        <Typography variant="h4">No items</Typography>
+        <Typography test-id="no-items-message" variant="h4">
+          No items
+        </Typography>
       )}
 
       <S.PaginationWrapper>

@@ -77,5 +77,6 @@ export const useMovies = () => {
     getMovies: fetchMovies,
     setPage: setCurrentPage,
     refresh,
+    paginatedMovies,
   };
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import CardContent from "@mui/material/CardContent";
 
 export const Description = styled(CardContent)`
-  height: 200px;
+  height: 150px;
   overflow: auto;
 
   ::-webkit-scrollbar {

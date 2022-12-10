@@ -11,8 +11,16 @@ export const Page = styled.div`
 `;
 
 export const PaginationWrapper = styled.div`
-  margin: 20px 0;
+  margin: 30px 0;
 `;
+
+export const RefreshWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 30px 0 0 0;
+  justify-content: center;
+`;
+
 export const MoviesDisplay = styled.div`
   width: 100vw;
   box-sizing: border-box;

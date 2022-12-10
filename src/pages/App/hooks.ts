@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Movie } from "src/entities/Movie";
-import { getMovies } from "src/services/movie";
+import { getMovies, refreshMovies } from "src/services/movie";
 
 export const useMovies = () => {
   const [paginatedMovies, setpaginatedMovies] = useState<Array<Movie[]>>([]);
@@ -50,6 +50,20 @@ export const useMovies = () => {
     }
   };
 
+  const refresh = async () => {
+    try {
+      setError(false);
+      setLoading(true);
+
+      await refreshMovies();
+      await fetchMovies();
+    } catch (error) {
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     loadMore(currentPage);
   }, [currentPage]);
@@ -62,5 +76,6 @@ export const useMovies = () => {
     currentPage,
     getMovies: fetchMovies,
     setPage: setCurrentPage,
+    refresh,
   };
 };

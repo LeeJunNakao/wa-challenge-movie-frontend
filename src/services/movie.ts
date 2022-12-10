@@ -24,3 +24,9 @@ export const getMovies = async (page: number = 1) => {
 
   return toCamelCaseObject<Pagination<Movie>>(response.data);
 };
+
+export const refreshMovies = async () => {
+  const response = await client.post<{ message: string }>("/movies/populate");
+
+  return response.data;
+};

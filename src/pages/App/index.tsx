@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import CircularProgress from "@mui/material/CircularProgress";
 import Card from "src/components/Card";
 import Pagination from "src/components/Pagination";
+import Button from "@mui/material/Button";
 import { useMovies } from "./hooks";
 
 import * as S from "./styles";
@@ -15,11 +16,16 @@ function App() {
     currentPage,
     lastPage,
     loading,
+    refresh,
   } = useMovies();
 
   useEffect(() => {
     getMovies();
   }, []);
+
+  const MoviesCards = currentPageMovies.map((m) => (
+    <Card key={m.externalId} image={m.banner} {...m} />
+  ));
 
   return (
     <S.Page>
@@ -33,6 +39,12 @@ function App() {
         Movies
       </Typography>
 
+      <S.RefreshWrapper>
+        <Button variant="outlined" color="inherit" onClick={refresh}>
+          Refresh
+        </Button>
+      </S.RefreshWrapper>
+
       <S.PaginationWrapper>
         <Pagination
           currentPage={currentPage}
@@ -40,14 +52,13 @@ function App() {
           totalPage={lastPage}
         />
       </S.PaginationWrapper>
+
       {loading ? (
         <CircularProgress color="inherit" />
+      ) : currentPageMovies.length ? (
+        <S.MoviesDisplay>{MoviesCards}</S.MoviesDisplay>
       ) : (
-        <S.MoviesDisplay>
-          {currentPageMovies.map((m) => (
-            <Card key={m.externalId} image={m.banner} {...m} />
-          ))}
-        </S.MoviesDisplay>
+        <Typography variant="h4">No items</Typography>
       )}
 
       <S.PaginationWrapper>

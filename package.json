@@ -29,7 +29,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync build/ s3://wa-movie.softdevelopments.com.br --acl public-read"
   },

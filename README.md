@@ -4,28 +4,27 @@ Este projeto consiste um site para visualização de um catálogo de filmes alim
 
 ## Orientações
 
-Para rodar o projeto, siga os seguintes passos:
+## Para rodar o projeto, siga os seguintes passos:
 
 ### Docker
 
-- Monte a imagem:  
-  
+- Monte a imagem:
+
 ```
   docker build -t <NOME_DA_IMAGEM> .
 ```
 
 - Inicie o container:
-  
+
 ```
 docker run -d -p 3000:3000 --name <NOME_DO_CONTAINER> <NOME_DA_IMAGEM>
 ```
 
 - Acesse pelo endereço: http://localhost:3000
 
-
 ### Linha de comando
 
-- Instale as dependências do projeto: 
+- Instale as dependências do projeto:
 
 ```
   yarn install
@@ -35,6 +34,14 @@ docker run -d -p 3000:3000 --name <NOME_DO_CONTAINER> <NOME_DA_IMAGEM>
 
 ```
   yarn start
+```
+
+## Para rodar testes automatizados
+
+- Rode o comando no console:
+
+```
+yarn test
 ```
 
 ## Projetos hospedados

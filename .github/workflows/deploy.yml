@@ -23,7 +23,7 @@ jobs:
       - name: Staging Build
         run: |
           yarn build
-        envs:
+        env:
           CI: false
       - name: Unit Tests
         run: |

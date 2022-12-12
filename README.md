@@ -22,6 +22,24 @@ docker run -d -p 3000:3000 --name <NOME_DO_CONTAINER> <NOME_DA_IMAGEM>
 
 - Acesse pelo endereço: http://localhost:3000
 
+### Dev container
+
+- Abra o projeto dentro do container através da extensão Dev container do VsCode.
+
+- Instale as dependências do projeto:
+
+```
+  yarn install
+```
+
+- Rode o servidor
+
+```
+  yarn start
+```
+
+- Acesse pelo endereço: http://localhost:3000
+
 ### Linha de comando
 
 - Instale as dependências do projeto:
@@ -35,6 +53,8 @@ docker run -d -p 3000:3000 --name <NOME_DO_CONTAINER> <NOME_DA_IMAGEM>
 ```
   yarn start
 ```
+
+- Acesse pelo endereço: http://localhost:3000
 
 ## Para rodar testes automatizados
 
